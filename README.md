@@ -11,7 +11,7 @@ go-connpass is a Go client library for accessing the [connpass API](https://conn
 ## Installation
 
 ```shell
-$go get github.com/TsujiTakuya55/go-connpass/connpass
+$ go get github.com/TsujiTakuya55/go-connpass/connpass
 ```
 
 ## Usage
