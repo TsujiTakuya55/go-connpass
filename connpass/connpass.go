@@ -9,7 +9,6 @@ import (
 	"io/ioutil"
 	"reflect"
 	"github.com/google/go-querystring/query"
-	"fmt"
 )
 
 const (
@@ -100,7 +99,7 @@ func (c *Client) Get(param *Param) (*Connpass, *http.Response, error) {
 	if err != nil {
 		return nil, nil, err
 	}
-	
+
 	req, err := c.NewRequest("GET", u, nil)
 	if err != nil {
 		return nil, nil, err
