@@ -4,7 +4,6 @@ import (
 	"net/url"
 	"net/http"
 	"io"
-	"bytes"
 	"encoding/json"
 	"io/ioutil"
 	"reflect"
@@ -100,7 +99,7 @@ func (c *Client) Get(param *Param) (*Connpass, *http.Response, error) {
 		return nil, nil, err
 	}
 
-	req, err := c.NewRequest("GET", u, nil)
+	req, err := c.NewRequest("GET", u)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -114,7 +113,7 @@ func (c *Client) Get(param *Param) (*Connpass, *http.Response, error) {
 	return *connpass, resp, err
 }
 
-func (c *Client) NewRequest(method, urlStr string, body interface{}) (*http.Request, error) {
+func (c *Client) NewRequest(method, urlStr string) (*http.Request, error) {
 	rel, err := url.Parse(urlStr)
 	if err != nil {
 		return nil, err
@@ -122,16 +121,7 @@ func (c *Client) NewRequest(method, urlStr string, body interface{}) (*http.Requ
 
 	u := c.BaseURL.ResolveReference(rel)
 
-	var buf io.ReadWriter
-	if body != nil {
-		buf = new(bytes.Buffer)
-		err := json.NewEncoder(buf).Encode(body)
-		if err != nil {
-			return nil, err
-		}
-	}
-
-	req, err := http.NewRequest(method, u.String(), buf)
+	req, err := http.NewRequest(method, u.String(), nil)
 	if err != nil {
 		return nil, err
 	}
