@@ -100,9 +100,7 @@ func (c *Client) Get(param *Param) (*Connpass, *http.Response, error) {
 	if err != nil {
 		return nil, nil, err
 	}
-
-	fmt.Println("u", u)
-
+	
 	req, err := c.NewRequest("GET", u, nil)
 	if err != nil {
 		return nil, nil, err
