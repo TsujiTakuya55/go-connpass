@@ -1,9 +1,4 @@
-machine:
-  environment:
-    GOPATH: $HOME/go-connpass
-    PATH: $GOPATH/bin:$PATH
-
 test:
   override:
-    - go get -t -v ./...
+    - go get github.com/google/go-querystring
     - go test ./connpass/
