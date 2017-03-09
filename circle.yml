@@ -1,7 +1,7 @@
 machine:
   environment:
     GOROOT: $HOME/go
-    GOPATH: $HOME/gopath
+    GOPATH: $HOME/go-connpass
     PATH: $GOROOT/bin:$GOPATH/bin:$PATH
 
 test:
