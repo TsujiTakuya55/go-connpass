@@ -1,4 +1,4 @@
 test:
   override:
-    - cd ./connpass/
+    - cd go-connpass/connpass/
     - go test
