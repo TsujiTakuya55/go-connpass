@@ -1,4 +1,4 @@
 test:
   override:
-    - cd go-connpass/connpass/
+    - cd /home/ubuntu/go-connpass/connpass/
     - go test
