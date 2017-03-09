@@ -1,8 +1,10 @@
 package connpass
 
-import "testing"
+import (
+	"testing"
+)
 
-func testNewClient(t *testing.T) {
+func TestNewClient(t *testing.T) {
 	client := NewClient()
 
 	if got, want := client.BaseURL.String(), defaultBaseURL; got != want {
