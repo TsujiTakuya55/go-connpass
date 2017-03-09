@@ -1,8 +1,7 @@
 machine:
   environment:
-    GOROOT: $HOME/go
     GOPATH: $HOME/go-connpass
-    PATH: $GOROOT/bin:$GOPATH/bin:$PATH
+    PATH: $GOPATH/bin:$PATH
 
 test:
   override:
