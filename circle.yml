@@ -1,4 +1,5 @@
 test:
   override:
     - go get -t github.com/google/go-querystring/query
+    - go vet ./connpass/ 
     - go test ./connpass/
