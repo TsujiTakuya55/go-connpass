@@ -2,7 +2,10 @@
 
 go-connpass is a Go client library for accessing the [connpass API](https://connpass.com/about/api/).
 
-[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/TsujiTakuya55/go-connpass/blob/master/LICENSE)
+
+Build Status : [![Circle CI](https://circleci.com/gh/TsujiTakuya55/go-connpass.svg?style=shield)](https://circleci.com/gh/TsujiTakuya55/go-connpass)
+
+LICENSE : [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/TsujiTakuya55/go-connpass/blob/master/LICENSE)
 
 ## Requirement
 
