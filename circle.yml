@@ -1,6 +1,16 @@
 version: 2
-test:
-  override:
-    - go get -t github.com/google/go-querystring/query
-    - go vet ./connpass/ 
-    - go test ./connpass/
+jobs:
+    build:
+        working_directory: /.go/src/github.com/TsujiTakuya55/go-connpass
+        docker:
+            - image: golang:latest
+              environment:
+                  GO15VENDOREXPERIMENT: 1
+        steps:
+            - checkout
+            - run:
+                name: "run go code"
+                command: |
+                    go get -t github.com/google/go-querystring/query
+                    go vet ./connpass/
+                    go test ./connpass/
